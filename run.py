@@ -1,4 +1,12 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
-print("hello world")
+def get_player_name():
+    """
+    gets the players name
+    """
+    print("Welcome to Red Hugh's adventure")
+    print("Enter your name to begin your escape")
+    name = input("What is your name prisoner:\n")
+    print("Welcome " + name + " and best of luck!")
+
+
+
+get_player_name()
