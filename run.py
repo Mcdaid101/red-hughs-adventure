@@ -42,6 +42,12 @@ def intro():
     """
     The opening scene of the game.
     """
+    print("    ____       _                               ____") 
+    print("   / __ \_____(_)________  ____     ________  / / /") 
+    print("  / /_/ / ___/ / ___/ __ \/ __ \   / ___/ _ \/ / /")   
+    print(" / ____/ /  / (__  ) /_/ / / / /  / /__/  __/ / /")    
+    print("/_/   /_/  /_/____/\____/_/ /_/   \___/\___/_/_/")      
+
     delay_print("You lie dreaming of your wife and kids, of freedom and a tankard of ale by the\n")
     delay_print("fire..\n")
     delay_print("Until Red Hugh shakes you awake, come on! now's our chance to get out of this\n")
@@ -50,7 +56,7 @@ def intro():
     delay_print("This is our chance says Red let's go " + name +"!\n")
     delay_print("The cell door swings open, now how will you escape?\n")
     clear_screen()
-    print("The watchhouse is straight ahead, the courtyard is on the right and the cells are on our left whispers Red")
+    delay_print("The watchhouse is straight ahead, the courtyard is on the right and the cells are on our left whispers Red")
     print("Go: Forward / Right / Left")
     user_input = input()
 
@@ -58,13 +64,27 @@ def intro():
         user_input = input("Please enter either: forward, right or left: ")
     else:
         if user_input == "forward":
-            print("You chose " + user_input + " to enter the Watchhouse")
+            delay_print("You chose " + user_input + " to enter the Watchhouse")
+            delay_print("Loading Area........\n")
+            watch_house()
         elif user_input == "right":
-            print("You chose " + user_input + " to enter the Courtyard")
+            delay_print("You chose " + user_input + " to enter the Courtyard")
+            delay_print("Loading Area........\n")
         else:
-            print("You chose " + user_input + " to enter the Cells")
+            delay_print("You chose " + user_input + " to enter the Cells")
+            delay_print("Loading Area........\n")
     
-     
+
+
+def watch_house():
+    print(" _       __      __       __    __")
+    print("| |     / /___ _/ /______/ /_  / /_  ____  __  __________")
+    print("| | /| / / __ `/ __/ ___/ __ \/ __ \/ __ \/ / / / ___/ _ \ ")
+    print("| |/ |/ / /_/ / /_/ /__/ / / / / / / /_/ / /_/ (__  )  __/")
+    print("|__/|__/\__,_/\__/\___/_/ /_/_/ /_/\____/\__,_/____/\___/")
+                                                        
+    delay_print("You open the door of the watch house, the prison guard lies dead on the cold floor\n")
+
 
 
 def main():
