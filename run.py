@@ -10,7 +10,10 @@ def get_player_name():
     print("Welcome " + name.capitalize() + " and best of luck!")
 
 
+def main():
+    get_player_name()
 
-get_player_name()
+
+main()
 
 
