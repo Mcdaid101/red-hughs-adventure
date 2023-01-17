@@ -22,6 +22,28 @@ def delay_print(s):
 
 
 def start_game():
+
+    print("        /\         /\                   .           /\     ")
+    print( "      /  \       /  \                  |@>        /  \ ")
+    print( "     /    \     / .  \                 |         /    \ ")
+    print( "    /      \   /  |@> \      /\       / \       /      \ ")
+    print("    /     /\ \ /   |    \    /  \     /   \     /        \ ")
+    print( "  /     /  \ /  _ | _   \  /    \    | O |    /          _   _   _")
+    print( " /     /    \  |_|_|_|   \/      \   |___|   /          | |_| |_| |")
+    print( "/     /      \  | O |    /        \  | |_|  /     /\     |         |")
+    print( "  _   _   _   \ |___|   /          \ |__|| /     /  \    |  O   O  |")
+    print( " | |_| |_| |  | |_  |  /             | |_|      /    \   |   __ _  |")
+    print( "|         |  |__|   | /              |_  |     /         |     |   |")
+    print( " | O  O  O |  | |_  |/               |__ |    /          | O  O  O |")
+    print( " |  _      |  _   _   _        ______   |   _   _   _    |  _      |")
+    print( " | |__|_ | |_| |_| |_| |______|      |_____| |_| |_| |_| |__|_ |_  |")
+    print( " |  |   _| |        _  |  | _|  ____     _||        _  |    |  |   |")
+    print( " |   _| _  ||_|   _|_  | _|_   |||||| |_| _||_|   _|_  |   _| _|   |")
+    print( " |  __|  |_|  |_       | | |__ |++++|   |_||  |_      ||  __|  |_  |")
+    print( " |_________|___________|-------------------|___________|___________|")
+    print( "                              /_/_/")
+    print( "                              /_/_/")
+    print(" ")
     """
     gets the players name and begins the game. 
     """
@@ -54,37 +76,66 @@ def intro():
     delay_print("dam castle\n")
     delay_print("Red Hugh unlocks your cufflinks with the key he stole from the guard\n")
     delay_print("This is our chance says Red let's go " + name +"!\n")
-    delay_print("The cell door swings open, now how will you escape?\n")
-    clear_screen()
-    delay_print("The watchhouse is straight ahead, the courtyard is on the right and the cells are on our left whispers Red")
+    delay_print("The cell door swings open, now how will you escape?....................\n")
+    delay_print("The watchhouse is straight ahead, the courtyard is on the right\n") 
+    delay_print("and the cells are on our left whispers Red\n")
     print("Go: Forward / Right / Left")
     user_input = input()
 
     while not re.match("^[forward, right, left]*$", user_input):
-        user_input = input("Please enter either: forward, right or left: ")
+        user_input = input("Please enter either: forward, right or left: \n")
     else:
         if user_input == "forward":
-            delay_print("You chose " + user_input + " to enter the Watchhouse")
+            delay_print("You chose " + user_input + " to enter the Watchhouse\n")
             delay_print("Loading Area........\n")
             watch_house()
         elif user_input == "right":
-            delay_print("You chose " + user_input + " to enter the Courtyard")
+            delay_print("You chose " + user_input + " to enter the Courtyard\n")
             delay_print("Loading Area........\n")
         else:
-            delay_print("You chose " + user_input + " to enter the Cells")
+            delay_print("You chose " + user_input + " to enter the Cells\n")
             delay_print("Loading Area........\n")
     
 
 
 def watch_house():
+    """
+    Loads the watchhouse area.
+    """
+    clear_screen()
     print(" _       __      __       __    __")
     print("| |     / /___ _/ /______/ /_  / /_  ____  __  __________")
     print("| | /| / / __ `/ __/ ___/ __ \/ __ \/ __ \/ / / / ___/ _ \ ")
     print("| |/ |/ / /_/ / /_/ /__/ / / / / / / /_/ / /_/ (__  )  __/")
     print("|__/|__/\__,_/\__/\___/_/ /_/_/ /_/\____/\__,_/____/\___/")
+    print("")
                                                         
-    delay_print("You open the door of the watch house, the prison guard lies dead on the cold floor\n")
+    delay_print("You open the door of the watch house..\n") 
+    delay_print("The prison guard lies dead on the cold floor\n")
+    delay_print("Red looks at you and smiles, how else do you think I got\n")
+    delay_print("that key?\n")
+    delay_print("There's not much in here " + name + " we should move on to\n")
+    delay_print("the next room I already looted the place. \n")
+    print(" ")
+    delay_print("Our cell is straight ahead, the other cells are to the right\n")
+    delay_print("and the Courtyard is to the left\n")
+    print("Go: Forward / Right / Left")
 
+    user_input = input()
+
+    while not re.match("^[forward, right, left]*$", user_input):
+        user_input = input("Please enter either: forward, right or left: \n")
+    else:
+        if user_input == "forward":
+            delay_print("You chose " + user_input + " to enter your old cell\n")
+            delay_print("Loading Area........\n")
+        elif user_input == "left":
+            delay_print("You chose " + user_input + " to enter the Courtyard\n")
+            delay_print("Loading Area........\n")
+        else:
+            delay_print("You chose " + user_input + " to enter the Cells\n")
+            delay_print("Loading Area........\n")
+    
 
 
 def main():
