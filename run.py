@@ -1,19 +1,14 @@
-from rich import print
-
 def get_player_name():
     """
     gets the players name
     """
     print("Welcome to Red Hugh's adventure")
-    print("Enter your name to begin your escape")
+    print("Enter your name to begin your escape!")
     name = input("What is your name prisoner:\n")
     print("Welcome " + name.capitalize() + " and best of luck!")
 
 
-def main():
-    get_player_name()
+get_player_name()
 
-
-main()
 
 
