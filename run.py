@@ -5,6 +5,7 @@ import os
 import re
 import colorama
 from colorama import Fore
+from images import art
 
 def clear_screen():
     """
@@ -24,31 +25,10 @@ def delay_print(s):
 
 
 def start_game():
-    print(Fore.GREEN + " ")
-    print("        /\         /\                   .           /\     ")
-    print( "      /  \       /  \                  |@>        /  \ ")
-    print( "     /    \     / .  \                 |         /    \ ")
-    print( "    /      \   /  |@> \      /\       / \       /      \ ")
-    print("    /     /\ \ /   |    \    /  \     /   \     /        \ ")
-    print( "  /     /  \ /  _ | _   \  /    \    | O |    /          _   _   _")
-    print( " /     /    \  |_|_|_|   \/      \   |___|   /          | |_| |_| |")
-    print( "/     /      \  | O |    /        \  | |_|  /     /\     |         |")
-    print( "  _   _   _   \ |___|   /          \ |__|| /     /  \    |  O   O  |")
-    print( " | |_| |_| |  | |_  |  /             | |_|      /    \   |   __ _  |")
-    print( "|         |  |__|   | /              |_  |     /         |     |   |")
-    print( " | O  O  O |  | |_  |/               |__ |    /          | O  O  O |")
-    print( " |  _      |  _   _   _        ______   |   _   _   _    |  _      |")
-    print( " | |__|_ | |_| |_| |_| |______|      |_____| |_| |_| |_| |__|_ |_  |")
-    print( " |  |   _| |        _  |  | _|  ____     _||        _  |    |  |   |")
-    print( " |   _| _  ||_|   _|_  | _|_   |||||| |_| _||_|   _|_  |   _| _|   |")
-    print( " |  __|  |_|  |_       | | |__ |++++|   |_||  |_      ||  __|  |_  |")
-    print( " |_________|___________|-------------------|___________|___________|")
-    print( "                              /_/_/")
-    print( "                              /_/_/")
-    print(" ")
     """
     gets the players name and begins the game. 
     """
+    print(art['start'])
     delay_print("Welcome to Red Hugh's adventure!\n")
     delay_print("A text adventure game where you must escape Dublin castle\n")
     delay_print("with the gaelic chieftain Red Hugh O'Donnell\n")
@@ -66,12 +46,7 @@ def intro():
     """
     The opening scene of the game.
     """
-    print("    ____       _                               ____") 
-    print("   / __ \_____(_)________  ____     ________  / / /") 
-    print("  / /_/ / ___/ / ___/ __ \/ __ \   / ___/ _ \/ / /")   
-    print(" / ____/ /  / (__  ) /_/ / / / /  / /__/  __/ / /")    
-    print("/_/   /_/  /_/____/\____/_/ /_/   \___/\___/_/_/")      
-    print(" ")
+    print(art['intro'])
     delay_print("You lie dreaming of your wife and kids, of freedom and a tankard of ale by the\n")
     delay_print("fire..\n")
     delay_print("Until Red Hugh shakes you awake, come on! now's our chance to get out of this\n")
@@ -105,12 +80,7 @@ def watch_house():
     Loads the watchhouse area.
     """
     clear_screen()
-    print(" _       __      __       __    __")
-    print("| |     / /___ _/ /______/ /_  / /_  ____  __  __________")
-    print("| | /| / / __ `/ __/ ___/ __ \/ __ \/ __ \/ / / / ___/ _ \ ")
-    print("| |/ |/ / /_/ / /_/ /__/ / / / / / / /_/ / /_/ (__  )  __/")
-    print("|__/|__/\__,_/\__/\___/_/ /_/_/ /_/\____/\__,_/____/\___/")
-    print("")
+    print(art['watch_house'])
                                                         
     delay_print("You open the door of the watch house..\n") 
     delay_print("The prison guard lies dead on the cold floor\n")
