@@ -7,7 +7,8 @@ import colorama
 from colorama import Fore
 from images import art
 from scripts import script
-
+from rich.panel import Panel
+from rich.text import Text
 
 
 def clear_screen():
@@ -24,13 +25,14 @@ def delay_print(s):
     for c in s:
         sys.stdout.write(c)
         sys.stdout.flush()
-        time.sleep(0.05)
+        time.sleep(0.0)
 
 
 def start_game():
     """
     gets the players name and begins the game. 
     """
+    delay_print(Fore.GREEN + "It's christmas night in Dublin castle, the year is 1591 AD")
     print(art['start'])
     delay_print(script['start'])
     global name
@@ -47,16 +49,10 @@ def intro():
     The opening scene of the game.
     """
     print(art['intro'])
-    delay_print("You lie dreaming of your wife and kids, of freedom and a tankard of ale by the\n")
-    delay_print("fire..\n")
-    delay_print("Until Red Hugh shakes you awake, come on! now's our chance to get out of this\n")
-    delay_print("dam castle\n")
-    delay_print("Red Hugh unlocks your cufflinks with the key he stole from the guard\n")
+    delay_print(script['intro_one'])
     delay_print("This is our chance says Red let's go " + name +"!\n")
-    delay_print("The cell door swings open, now how will you escape?....................\n")
-    delay_print("The watchhouse is straight ahead, the courtyard is on the right\n") 
-    delay_print("and the cells are on our left whispers Red\n")
-    print("Go: Forward / Right / Left")
+    delay_print(script['intro_two'])
+    print("Go: forward / right / left")
     user_input = input()
 
     while not re.match("^[forward, right, left]*$", user_input):
@@ -80,19 +76,11 @@ def watch_house():
     Loads the watchhouse area.
     """
     clear_screen()
-    print(art['watch_house'])
-                                                        
-    delay_print("You open the door of the watch house..\n") 
-    delay_print("The prison guard lies dead on the cold floor\n")
-    delay_print("Red looks at you and smiles, how else do you think I got\n")
-    delay_print("that key?\n")
-    delay_print("There's not much in here " + name + " we should move on to\n")
-    delay_print("the next room I already looted the place. \n")
-    print(" ")
-    delay_print("Our cell is straight ahead, the other cells are to the right\n")
-    delay_print("and the Courtyard is to the left\n")
-    print("Go: Forward / Right / Left")
-
+    print(art['watch_house'])                                            
+    delay_print(script['watch_house_one'])
+    delay_print("There's not much in here " + name + " we should move on to the next room I already looted the place.\n")
+    delay_print(script['watch_house_two'])
+    print("Go: forward / right / left")
     user_input = input()
 
     while not re.match("^[forward, right, left]*$", user_input):
@@ -113,6 +101,5 @@ def watch_house():
 def main():
     start_game()
 
-print(["age"])
 main()
 
