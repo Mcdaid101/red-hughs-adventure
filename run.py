@@ -6,6 +6,9 @@ import re
 import colorama
 from colorama import Fore
 from images import art
+from scripts import script
+
+
 
 def clear_screen():
     """
@@ -29,10 +32,7 @@ def start_game():
     gets the players name and begins the game. 
     """
     print(art['start'])
-    delay_print("Welcome to Red Hugh's adventure!\n")
-    delay_print("A text adventure game where you must escape Dublin castle\n")
-    delay_print("with the gaelic chieftain Red Hugh O'Donnell\n")
-    delay_print("Enter your name to begin your escape...\n")
+    delay_print(script['start'])
     global name
     user = input("What is your name prisoner?\n")
     name = user.capitalize()
@@ -113,5 +113,6 @@ def watch_house():
 def main():
     start_game()
 
+print(["age"])
 main()
 
