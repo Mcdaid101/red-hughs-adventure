@@ -3,6 +3,8 @@ import sys
 from time import sleep
 import os
 import re
+import colorama
+from colorama import Fore
 
 def clear_screen():
     """
@@ -22,7 +24,7 @@ def delay_print(s):
 
 
 def start_game():
-
+    print(Fore.GREEN + " ")
     print("        /\         /\                   .           /\     ")
     print( "      /  \       /  \                  |@>        /  \ ")
     print( "     /    \     / .  \                 |         /    \ ")
