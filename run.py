@@ -69,7 +69,7 @@ def intro():
     print("  / /_/ / ___/ / ___/ __ \/ __ \   / ___/ _ \/ / /")   
     print(" / ____/ /  / (__  ) /_/ / / / /  / /__/  __/ / /")    
     print("/_/   /_/  /_/____/\____/_/ /_/   \___/\___/_/_/")      
-
+    print(" ")
     delay_print("You lie dreaming of your wife and kids, of freedom and a tankard of ale by the\n")
     delay_print("fire..\n")
     delay_print("Until Red Hugh shakes you awake, come on! now's our chance to get out of this\n")
