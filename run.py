@@ -79,26 +79,22 @@ def watch_house():
     """
     print(art['watch_house'])                                            
     delay_print(script['watch_house_one'])
-    delay_print("There's not much in here " + name + " we should move on to the next room I already\n looted the place.\n")
+    delay_print("There's not much in here " + name + " we should move on to the next room I already\nlooted the place.\n")
     delay_print(script['watch_house_two'])
-    print("Go: forward / right / left")
+    print("Go: right / left")
     user_input = input()
 
     while not re.match("^[forward, right, left]*$", user_input):
-        user_input = input("Please enter either: forward, right or left: \n")
+        user_input = input("Please enter either: right or left: \n")
     else:
-        if user_input == "forward":
-            delay_print("You chose " + user_input + " to enter your old cell\n")
-            delay_print("Loading Area........\n")
-            clear_screen()
-        elif user_input == "left":
+        if user_input == "left":
             delay_print("You chose " + user_input + " to enter the Courtyard\n")
             delay_print("Loading Area........\n")
             clear_screen()
         else:
             delay_print("You chose " + user_input + " to enter the Dungeon\n")
             delay_print("Loading Area........\n")
-            clear_screen
+            clear_screen()
             dungeon()
 
 
@@ -132,7 +128,30 @@ def wardens_office():
     print(art['wardens_office'])
     delay_print(script['warden_office_script'])
     print("What do you think " + name + " should we try pickpocket him?")
-    user_input = input("Enter: yes / no")
+    print("Enter: yes / no")
+    pickpocket = input()
+
+    while not re.match("^[yes, no]*$", pickpocket):
+        pickpocket = input("Please enter either: yes or no\n")
+    else:
+        if pickpocket == "yes":
+            delay_print("Go on " + name + " you can do it!\n")
+        else:
+            delay_print(script['refuse_pick_pocket'])
+            print("Enter: forward / right")
+            direction = input()
+            while not re.match("^[forward, right]*$", direction):
+                direction = input("Please enter either: forward or right\n")
+            else:
+                if direction == "forward":
+                    delay_print("You chose " + direction + " to enter the Barracks\n")
+                    delay_print("Loading Area........\n")
+                    clear_screen()
+                else:
+                    delay_print("You chose " + direction + "to enter the Courtyard")
+                    delay_print("Loading Area........\n")
+                    clear_screen()
+
 
 
 
