@@ -178,6 +178,68 @@ def courtyard():
     """
     print(art['courtyard'])
     delay_print(script['courtyard'])
+    user_input = input()
+
+    while not re.match("^[north, south, east, west, back]*$", user_input):
+        user_input = input("Please enter either: north, south, east, west or back\n")
+    else:
+        if user_input == "north":
+            delay_print("You chose " + user_input + " to enter the Armoury\n")
+            delay_print("Loading Area........\n")
+            clear_screen()
+            armoury()
+        elif user_input == "south":
+            delay_print("You chose " + user_input + " to enter the Tunnels\n")
+            delay_print("Loading Area........\n")
+            clear_screen()
+            tunnels()
+        elif user_input == "east":
+            delay_print("You chose " + user_input + " to enter the Gates\n")
+            delay_print("Loading Area........\n")
+            clear_screen()
+            gates()
+        elif user_input == "back":
+            delay_print("You chose " + user_input + " to enter the Dungeon\n")
+            delay_print("Loading Area........\n")
+            clear_screen()
+            dungeon()
+        else:
+            user_input == "west"
+            delay_print("You chose " + user_input + " to enter the Infirmary\n")
+            delay_print("Loading Area........\n")
+            clear_screen()
+            infirmary()
+
+
+def armoury():
+    """
+    Loads the Armoury scene
+    """
+    print(art['armoury'])
+    
+
+
+def tunnels():
+    """
+    Loads the tunnels scene
+    """
+    print(art['tunnels'])
+
+
+
+def castle_gates():
+    """
+    Loads the castle gates scene
+    """
+    print(art['gates'])
+
+
+
+def infirmary():
+    """
+    Loads the infirmary scene
+    """
+    print(art['infirmary'])
 
 
 

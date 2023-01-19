@@ -18,7 +18,7 @@ script = {
 
     "accept_pick_pocket": """You crawl over to the sleeping warden, his snores getting louder with each inch\nYou have three options pick his A: coat pocket B: trouser pocket C: desk.\nChoose wisely as only one contains the key..\n""",
 
-    "courtyard": """You sneak out into the shadow of the courtyard, there are four large doors.\nThe Armoury, the Tunnels, the Castle Gates and the Infirmary.\nEnter north for Armoury, south for tunnels, east for gates and west for\nthe infirmary.\n"""
+    "courtyard": """You sneak out into the shadow of the courtyard, there are five large doors.\nThe Armoury, the Tunnels, the Castle Gates and the Infirmary.\nEnter north for Armoury, south for tunnels, east for gates and west for\nthe infirmary.\nEnter back to return to the Cells\n"""
 }
 
 
