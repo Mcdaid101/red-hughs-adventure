@@ -23,7 +23,7 @@ def delay_print(s):
     for c in s:
         sys.stdout.write(c)
         sys.stdout.flush()
-        time.sleep(0.0)
+        time.sleep(0.05)
 
 
 def start_game():
@@ -59,13 +59,17 @@ def intro():
         if user_input == "forward":
             delay_print("You chose " + user_input + " to enter the Watchhouse\n")
             delay_print("Loading Area........\n")
+            clear_screen()
             watch_house()
         elif user_input == "right":
             delay_print("You chose " + user_input + " to enter the Courtyard\n")
             delay_print("Loading Area........\n")
+            clear_screen()
         else:
-            delay_print("You chose " + user_input + " to enter the Cells\n")
+            delay_print("You chose " + user_input + " to enter the Dungeon\n")
             delay_print("Loading Area........\n")
+            clear_screen()
+            dungeon()
     
 
 
@@ -73,10 +77,9 @@ def watch_house():
     """
     Loads the watchhouse area.
     """
-    clear_screen()
     print(art['watch_house'])                                            
     delay_print(script['watch_house_one'])
-    delay_print("There's not much in here " + name + " we should move on to the next room I already looted the place.\n")
+    delay_print("There's not much in here " + name + " we should move on to the next room I already\n looted the place.\n")
     delay_print(script['watch_house_two'])
     print("Go: forward / right / left")
     user_input = input()
@@ -91,9 +94,32 @@ def watch_house():
             delay_print("You chose " + user_input + " to enter the Courtyard\n")
             delay_print("Loading Area........\n")
         else:
-            delay_print("You chose " + user_input + " to enter the Cells\n")
+            delay_print("You chose " + user_input + " to enter the Dungeon\n")
             delay_print("Loading Area........\n")
-    
+            clear_screen
+            dungeon()
+
+
+def dungeon():
+    """
+    Loads the Dungeon cells area
+    """
+    print(art['dungeon'])
+    delay_print(script['dungeon'])
+    print("Go: left/ right")
+    user_input = input()
+
+    while not re.match("^[left, right]*$", user_input):
+        user_input = input("Please enter either: left or right\n")
+    else:
+        if user_input == "left":
+            delay_print("You chose " + user_input + " to enter the Warden's office\n")
+            delay_print("Loading Area........\n")
+        else:
+            delay_print("You chose " + user_input + " to enter the Barracks\n")
+            delay_print("Loading Area........\n")
+
+
 
 
 def main():
