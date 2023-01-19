@@ -8,6 +8,8 @@ from colorama import Fore
 from images import art
 from scripts import script
 
+global key
+
 
 def clear_screen():
     """
@@ -23,7 +25,7 @@ def delay_print(s):
     for c in s:
         sys.stdout.write(c)
         sys.stdout.flush()
-        time.sleep(0.0)
+        time.sleep(0.05)
 
 
 def start_game():
@@ -121,6 +123,15 @@ def dungeon():
             clear_screen()
 
 
+def warden_game():
+    pick = input()
+    if pick == "a":
+        print("You got the key")
+        key = True
+    else:
+        print("You died")
+
+
 def wardens_office():
     """
     Loads the wardens office area
@@ -136,6 +147,8 @@ def wardens_office():
     else:
         if pickpocket == "yes":
             delay_print("Go on " + name + " you can do it!\n")
+            delay_print(script['accept_pick_pocket'])
+            warden_game()
         else:
             delay_print(script['refuse_pick_pocket'])
             print("Enter: forward / right")

@@ -14,7 +14,9 @@ script = {
 
     "warden_office_script": """You open the door to the warden's office, the door creaks open accompanied by\nthe sound of heavy breathing. Wait! whispers Red what the hell is that noise..\nThe room is pitch dark so you grab the candle flickering on the wall to see.\nThe light brightens the room and the heavy breathing is revealed to be snoring.\nThe warden is lying slumped over his desk snoring like a pig, that old bastard\nis fast asleep says Red, we'd better get out of here.. but wait his keys!\nYou've always had nimble fingers isn't that the reason you're in here? says\nRed chuckling\n""",
 
-    "refuse_pick_pocket": """Ok maybe it is too risky, we'll just have to find another way out, lets go.\nThe barracks are in front of us, the courtyard is to our right which way now?\n"""
+    "refuse_pick_pocket": """Ok maybe it is too risky, we'll just have to find another way out, lets go.\nThe barracks are in front of us, the courtyard is to our right which way now?\n""",
+
+    "accept_pick_pocket": """You crawl over to the sleeping warden, his snores getting louder with each inch\nYou have three options pick his A: coat pocket B: trouser pocket C: desk.\nChoose wisely as only one contains the key..\n"""
 }
 
 
