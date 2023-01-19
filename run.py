@@ -25,7 +25,7 @@ def delay_print(s):
     for c in s:
         sys.stdout.write(c)
         sys.stdout.flush()
-        time.sleep(0.05)
+        time.sleep(0.0)
 
 
 def start_game():
@@ -35,8 +35,8 @@ def start_game():
     delay_print(Fore.GREEN + "It's christmas night in Dublin castle, the year is 1591 AD")
     print(art['start'])
     delay_print(script['start'])
+    user = input("What is your name prisoner?")
     global name
-    user = input("What is your name prisoner?\n")
     name = user.capitalize()
     delay_print("Welcome " + name + " and best of luck on your quest!\n")
     delay_print("L O A D I N G  G A M E ...\n")
@@ -67,6 +67,7 @@ def intro():
             delay_print("You chose " + user_input + " to enter the Courtyard\n")
             delay_print("Loading Area........\n")
             clear_screen()
+            courtyard()
         else:
             delay_print("You chose " + user_input + " to enter the Dungeon\n")
             delay_print("Loading Area........\n")
@@ -93,6 +94,7 @@ def watch_house():
             delay_print("You chose " + user_input + " to enter the Courtyard\n")
             delay_print("Loading Area........\n")
             clear_screen()
+            courtyard()
         else:
             delay_print("You chose " + user_input + " to enter the Dungeon\n")
             delay_print("Loading Area........\n")
@@ -124,6 +126,9 @@ def dungeon():
 
 
 def warden_game():
+    """
+    Mini game to pickpocket keys in the wardens office function
+    """
     pick = input()
     if pick == "a":
         print("You got the key")
@@ -164,13 +169,21 @@ def wardens_office():
                     delay_print("You chose " + direction + "to enter the Courtyard")
                     delay_print("Loading Area........\n")
                     clear_screen()
+                    courtyard()
 
 
+def courtyard():
+    """
+    Loads the courtyard function
+    """
+    print(art['courtyard'])
+    delay_print(script['courtyard'])
 
 
 
 def main():
     start_game()
-
+    
+ 
 main()
 
