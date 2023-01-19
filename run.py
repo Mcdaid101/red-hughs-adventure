@@ -23,7 +23,7 @@ def delay_print(s):
     for c in s:
         sys.stdout.write(c)
         sys.stdout.flush()
-        time.sleep(0.05)
+        time.sleep(0.0)
 
 
 def start_game():
@@ -90,9 +90,11 @@ def watch_house():
         if user_input == "forward":
             delay_print("You chose " + user_input + " to enter your old cell\n")
             delay_print("Loading Area........\n")
+            clear_screen()
         elif user_input == "left":
             delay_print("You chose " + user_input + " to enter the Courtyard\n")
             delay_print("Loading Area........\n")
+            clear_screen()
         else:
             delay_print("You chose " + user_input + " to enter the Dungeon\n")
             delay_print("Loading Area........\n")
@@ -115,9 +117,22 @@ def dungeon():
         if user_input == "left":
             delay_print("You chose " + user_input + " to enter the Warden's office\n")
             delay_print("Loading Area........\n")
+            clear_screen()
+            wardens_office()
         else:
             delay_print("You chose " + user_input + " to enter the Barracks\n")
             delay_print("Loading Area........\n")
+            clear_screen()
+
+
+def wardens_office():
+    """
+    Loads the wardens office area
+    """
+    print(art['wardens_office'])
+    delay_print(script['warden_office_script'])
+    print("What do you think " + name + " should we try pickpocket him?")
+    user_input = input("Enter: yes / no")
 
 
 
