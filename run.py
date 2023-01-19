@@ -7,8 +7,6 @@ import colorama
 from colorama import Fore
 from images import art
 from scripts import script
-from rich.panel import Panel
-from rich.text import Text
 
 
 def clear_screen():
