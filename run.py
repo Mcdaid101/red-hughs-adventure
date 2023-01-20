@@ -37,7 +37,7 @@ def delay_print(s):
     for c in s:
         sys.stdout.write(c)
         sys.stdout.flush()
-        time.sleep(0.05)
+        time.sleep(0.01)
 
 
 def start_game():
@@ -155,9 +155,6 @@ def warden_game():
            print("You searched the wrong place and woke the warden!")
            game_over()
         
-            
-
- 
 
 
 def wardens_office():
@@ -193,6 +190,52 @@ def wardens_office():
                     progress_bar()
                     clear_screen()
                     courtyard()
+
+def armoury():
+    """
+    Loads the Armoury scene
+    """
+    global sword
+    print(Fore.GREEN + art['armoury'])
+    delay_print(script['armoury'])
+    print("Enter: yes / no")
+    user_input = input()
+
+    while not re.match("^[yes, no]*$", user_input):
+        user_input = input("Please enter either: yes / no\n")
+    else:
+        if user_input == "yes":
+            sword = True
+            delay_print(script['accept_sword'])
+            progress_bar()
+            clear_screen()
+            courtyard()
+        else:
+            delay_print(script['deny_sword'])
+            progress_bar()
+            clear_screen()
+            courtyard()
+
+
+
+def barracks():
+    """
+    Loads the barracks function
+    """
+    print(Fore.GREEN + art['barracks'])
+    delay_print(script['barracks'])
+    global sword
+    
+    if sword:
+        delay_print(script['barracks_win'])
+        delay_print("We did it " + name + " we're finally free, jump out and get back to Donegal!\n")
+        clear_screen()
+        escape_play_again()
+    else:
+        delay_print("The guard slays you and Red as you were weaponless!\n")
+        delay_print("Don't bring fists to a sword fight!")
+        game_over()
+
 
 
 def courtyard():
@@ -232,32 +275,6 @@ def courtyard():
             progress_bar()
             clear_screen()
             infirmary()
-
-
-def armoury():
-    """
-    Loads the Armoury scene
-    """
-    global sword
-    print(Fore.GREEN + art['armoury'])
-    delay_print(script['armoury'])
-    print("Enter: yes / no")
-    user_input = input()
-
-    while not re.match("^[yes, no]*$", user_input):
-        user_input = input("Please enter either: yes / no\n")
-    else:
-        if user_input == "yes":
-            sword = True
-            delay_print(script['accept_sword'])
-            progress_bar()
-            clear_screen()
-            courtyard()
-        else:
-            delay_print(script['deny_sword'])
-            progress_bar()
-            clear_screen()
-            courtyard()
 
     
 
@@ -299,6 +316,8 @@ def infirmary():
     """
     print(Fore.GREEN + art['infirmary'])
     delay_print(script['infirmary'])
+    clear_screen()
+    courtyard()
 
 
 def escape_play_again():
@@ -321,15 +340,17 @@ def game_over():
     """
     Appears if they player is caught
     """
-    delay_print(Fore.RED + art['dead'])
-    delay_print(script['game_over'])
+    print(Fore.RED + art['dead'])
+    print(script['game_over'])
     print("Would you like to play again?")
     print("Enter: yes / no")
     user_input = input()
     
     if user_input == "yes":
+        clear_screen()
         start_game()
     else:
+        clear_screen()
         delay_print(art['goodbye'])
 
 

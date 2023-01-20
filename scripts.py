@@ -28,9 +28,13 @@ script = {
 
     "tunnels": """You enter the dark of the tunnels. This place smells like shit says Red I really\ndon't want to be down here. Hold on what's that noise! The sound of a thousand\n squeals echoes down the tunnel. Rats! hundreds of them. They quickly swarm\nover you and nip at your skin. Back to the courtyard shouts Red before they eat\nus alive.\n""",
 
+    "barracks": """You sneak into the barracks knowing that the guard is asleep, there is a back\window you can jump through and land on a bale of hay below to escape.\nAs you tiptoe across the room the guard awakes, spots you and grabs his sword.\nYou ready yourself to fight! a weapon would be useful right now..\n""",
+
+    "barracks_win": """You and Red draw your swords from the armoury, two against one this should be\neasy.\n""",
+
     "gates_key": """The castle gates loom above you, we definitely can't climb that anyway look at\nthose spikes! Wait look at the key hole! Try it with the key you got earlier.\n It works!\n""",
 
-    "infirmary": """You enter the infirmary. Sick prisoners lie in their beds asleep, arms chained\nto a ball on the ground. There doesn't seem to be much in here says Red.\nAlthough there is health potions over there if you need them.\n""",
+    "infirmary": """You enter the infirmary. Sick prisoners lie in their beds asleep, arms chained\nto a ball on the ground. There doesn't seem to be much in here says Red.\nLet's head back out to the courtyard\n""",
 
     "game_over": """GAME OVER you have been killed by the guards, better luck next time!\n"""
 }
