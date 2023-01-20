@@ -152,7 +152,8 @@ def warden_game():
             clear_screen()
             courtyard()
     else:
-           print("You searched the wrong place and woke the warden!")
+           clear_screen()
+           print(Fore.RED + "You searched the wrong place and woke the warden!")
            game_over()
         
 
