@@ -9,8 +9,9 @@ from images import art
 from scripts import script
 from games import warden_game
 
-global key
-global sword 
+key = False
+sword = False
+
 
 def clear_screen():
     """
@@ -26,7 +27,7 @@ def delay_print(s):
     for c in s:
         sys.stdout.write(c)
         sys.stdout.flush()
-        time.sleep(0.02)
+        time.sleep(0.0001)
 
 
 def start_game():
@@ -126,6 +127,23 @@ def dungeon():
             clear_screen()
 
 
+def warden_game():
+    """
+    Mini game to pickpocket keys in the wardens office function
+    """
+    global key
+    pick = input()
+    if pick == "a":
+        key = True
+        print("You got the key")
+        delay_print("Now lets head to the courtyard")
+        delay_print("Loading Area........\n")
+        clear_screen()
+        courtyard()
+    else:
+        print("You died")
+
+
 def wardens_office():
     """
     Loads the wardens office area
@@ -204,6 +222,7 @@ def armoury():
     """
     Loads the Armoury scene
     """
+    global sword
     print(art['armoury'])
     delay_print(script['armoury'])
     print("Enter: yes / no")
@@ -233,6 +252,10 @@ def tunnels():
     Loads the tunnels scene
     """
     print(art['tunnels'])
+    delay_print(script['tunnels'])
+    delay_print("Loading Area........\n")
+    clear_screen()
+    courtyard()
 
 
 
@@ -240,7 +263,17 @@ def gates():
     """
     Loads the castle gates scene
     """
+    global key
     print(art['gates'])
+    
+    if key:
+        delay_print("Looks like we are out of here")
+    else:
+        delay_print("Looks like it is locked we need to find a key, let's head back")
+        delay_print("Loading Area........\n")
+        clear_screen()
+        courtyard()
+
 
 
 
