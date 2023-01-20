@@ -1,3 +1,4 @@
+from images import art
 
 def warden_game():
     """
@@ -14,3 +15,5 @@ def warden_game():
         courtyard()
     else:
         print("You died")
+    
+

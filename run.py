@@ -9,6 +9,7 @@ from images import art
 from scripts import script
 from games import warden_game
 
+
 key = False
 sword = False
 
@@ -34,6 +35,7 @@ def start_game():
     """
     gets the players name and begins the game. 
     """
+    clear_screen()
     delay_print(Fore.GREEN + "It's christmas night in Dublin castle, the year is 1591 AD")
     print(art['start'])
     delay_print(script['start'])
@@ -267,13 +269,15 @@ def gates():
     print(art['gates'])
     
     if key:
-        delay_print("Looks like we are out of here")
+        delay_print(script['gates_key'])
+        delay_print("We did it " + name + " we're finally free, let's take those horses and get back to Donegal!")
+        clear_screen()
+        play_again()
     else:
         delay_print("Looks like it is locked we need to find a key, let's head back")
         delay_print("Loading Area........\n")
         clear_screen()
         courtyard()
-
 
 
 
@@ -284,8 +288,22 @@ def infirmary():
     print(art['infirmary'])
 
 
+def play_again():
+    delay_print(art['escaped'])
+    print("Congratulations " + name + " you win!")
+    print("Would you like to play again?")
+    print("Enter: yes / no")
+    user_input = input()
+    
+    if user_input == "yes":
+        start_game()
+    else:
+        delay_print(art['goodbye'])
 
 def main():
+    """
+    Main game function
+    """
     start_game()
     
  

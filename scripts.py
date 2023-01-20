@@ -20,13 +20,15 @@ script = {
 
     "courtyard": """You sneak out into the shadow of the courtyard, there are five large doors.\nThe Armoury, the Tunnels, the Castle Gates and the Infirmary.\nEnter north for Armoury, south for tunnels, east for gates and west for\nthe infirmary.\nEnter back to return to the Cells\n""",
 
-    "armoury": """You enter the armoury, luckily no one is there. Looks like we hit the jackpot\nthere's enough weapons here to supply an army say's Red what do you think, should\nwe take a sword or two?\n""",
+    "armoury": """You enter the armoury, luckily no one is there. Looks like we struck gold.\nThere's enough weapons here to supply an army say's Red what do you think should\nwe take a sword or two?\n""",
 
     "accept_sword": """That's the spirit! I have a feeling these will come in handy winks Red\nThere doesn't seem to be a way out of here let's head back to the courtyard.\n""",
 
     "deny_sword": """Ok fine, but I have a feeling we'll need these if we are ever to escape.\nAnyway let's go there's no way out in here let's head back to the courtyard.\n""",
 
-    "tunnels": """You enter the dark of the tunnels. This place smells like shit says Red I really\ndon't want to be down here. Hold on what's that noise! The sound of a thousand\n squeals echoes down the tunnel. Rats! hundreds of them. They quickly swarm\nover you and nip at your skin. Back to the courtyard shouts Red before they eat\nus alive."""
+    "tunnels": """You enter the dark of the tunnels. This place smells like shit says Red I really\ndon't want to be down here. Hold on what's that noise! The sound of a thousand\n squeals echoes down the tunnel. Rats! hundreds of them. They quickly swarm\nover you and nip at your skin. Back to the courtyard shouts Red before they eat\nus alive.\n""",
+
+    "gates_key": """The castle gates loom above you, we definitely can't climb that anyway look at\nthose spikes! Wait look at the key hole! Try it with the key you got earlier.\n It works!\n"""
 }
 
 
