@@ -8,6 +8,7 @@ from colorama import Fore
 from images import art
 from scripts import script
 from rich.progress import track
+import random
 
 
 key = False
@@ -36,7 +37,7 @@ def delay_print(s):
     for c in s:
         sys.stdout.write(c)
         sys.stdout.flush()
-        time.sleep(0.0001)
+        time.sleep(0.05)
 
 
 def start_game():
@@ -141,18 +142,22 @@ def warden_game():
     """
     Mini game to pickpocket keys in the wardens office function
     """
-    global key
-    pick = input()
-    if pick == "a":
-        key = True
-        print("You got the key")
-        delay_print("Now lets head to the courtyard")
-        progress_bar()
-        clear_screen()
-        courtyard()
+    keys = random.randint(1, 2)
+    pick = int(input("Enter 1 for coat, 2 for trousers  "))
+    if pick == keys:
+            key = True
+            print("You got the key")
+            delay_print("Now lets head to the courtyard")
+            progress_bar()
+            clear_screen()
+            courtyard()
     else:
-        print("You searched the wrong place and woke the warden!")
-        game_over()
+           print("You searched the wrong place and woke the warden!")
+           game_over()
+        
+            
+
+ 
 
 
 def wardens_office():
