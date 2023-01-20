@@ -6,6 +6,6 @@ def warden_game():
     pick = input()
     if pick == "a":
         print("You got the key")
-        key = True
+        key == True
     else:
         print("You died")

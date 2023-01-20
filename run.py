@@ -10,7 +10,7 @@ from scripts import script
 from games import warden_game
 
 global key
-
+global sword 
 
 def clear_screen():
     """
@@ -26,7 +26,7 @@ def delay_print(s):
     for c in s:
         sys.stdout.write(c)
         sys.stdout.flush()
-        time.sleep(0.0)
+        time.sleep(0.02)
 
 
 def start_game():
@@ -36,7 +36,7 @@ def start_game():
     delay_print(Fore.GREEN + "It's christmas night in Dublin castle, the year is 1591 AD")
     print(art['start'])
     delay_print(script['start'])
-    user = input("What is your name prisoner?")
+    user = input("What is your name prisoner?  ")
     global name
     name = user.capitalize()
     delay_print("Welcome " + name + " and best of luck on your quest!\n")
@@ -167,6 +167,7 @@ def courtyard():
     """
     print(art['courtyard'])
     delay_print(script['courtyard'])
+    print("Enter: north / south / east / west / back")
     user_input = input()
 
     while not re.match("^[north, south, east, west, back]*$", user_input):
@@ -192,8 +193,7 @@ def courtyard():
             delay_print("Loading Area........\n")
             clear_screen()
             dungeon()
-        else:
-            user_input == "west"
+        elif user_input == "west":
             delay_print("You chose " + user_input + " to enter the Infirmary\n")
             delay_print("Loading Area........\n")
             clear_screen()
@@ -205,6 +205,26 @@ def armoury():
     Loads the Armoury scene
     """
     print(art['armoury'])
+    delay_print(script['armoury'])
+    print("Enter: yes / no")
+    user_input = input()
+
+    while not re.match("^[yes, no]*$", user_input):
+        user_input = input("Please enter either: yes / no\n")
+    else:
+        if user_input == "yes":
+            sword = True
+            delay_print(script['accept_sword'])
+            delay_print("Loading Area........\n")
+            clear_screen()
+            courtyard()
+        else:
+            delay_print(script['deny_sword'])
+            delay_print("Loading Area........\n")
+            clear_screen()
+            courtyard()
+
+    
     
 
 

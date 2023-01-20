@@ -18,7 +18,13 @@ script = {
 
     "accept_pick_pocket": """You crawl over to the sleeping warden, his snores getting louder with each inch\nYou have three options pick his A: coat pocket B: trouser pocket C: desk.\nChoose wisely as only one contains the key..\n""",
 
-    "courtyard": """You sneak out into the shadow of the courtyard, there are five large doors.\nThe Armoury, the Tunnels, the Castle Gates and the Infirmary.\nEnter north for Armoury, south for tunnels, east for gates and west for\nthe infirmary.\nEnter back to return to the Cells\n"""
+    "courtyard": """You sneak out into the shadow of the courtyard, there are five large doors.\nThe Armoury, the Tunnels, the Castle Gates and the Infirmary.\nEnter north for Armoury, south for tunnels, east for gates and west for\nthe infirmary.\nEnter back to return to the Cells\n""",
+
+    "armoury": """You enter the armoury, luckily no one is there. Looks like we hit the jackpot\nthere's enough weapons here to supply an army say's Red what do you think, should\nwe take a sword or two?\n""",
+
+    "accept_sword": """That's the spirit! I have a feeling these will come in handy winks Red\nThere doesn't seem to be a way out of here let's head back to the courtyard.\n""",
+
+    "deny_sword": """Ok fine, but I have a feeling we'll need these if we are ever to escape.\nAnyway let's go there's no way out in here let's head back to the courtyard.\n"""
 }
 
 
