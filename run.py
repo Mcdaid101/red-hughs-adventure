@@ -7,6 +7,7 @@ import colorama
 from colorama import Fore
 from images import art
 from scripts import script
+from games import warden_game
 
 global key
 
@@ -125,18 +126,6 @@ def dungeon():
             clear_screen()
 
 
-def warden_game():
-    """
-    Mini game to pickpocket keys in the wardens office function
-    """
-    pick = input()
-    if pick == "a":
-        print("You got the key")
-        key = True
-    else:
-        print("You died")
-
-
 def wardens_office():
     """
     Loads the wardens office area
@@ -227,7 +216,7 @@ def tunnels():
 
 
 
-def castle_gates():
+def gates():
     """
     Loads the castle gates scene
     """
