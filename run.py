@@ -7,11 +7,19 @@ import colorama
 from colorama import Fore
 from images import art
 from scripts import script
-from games import warden_game
+from rich.progress import track
 
 
 key = False
 sword = False
+
+
+def progress_bar():
+    """
+    Adds a progress bar to simulate each function being loaded
+    """
+    for i in track(range(4), description="Loading Area..."):
+       time.sleep(0.4)
 
 
 def clear_screen():
@@ -43,7 +51,7 @@ def start_game():
     global name
     name = user.capitalize()
     delay_print("Welcome " + name + " and best of luck on your quest!\n")
-    delay_print("L O A D I N G  G A M E ...\n")
+    progress_bar()
     clear_screen()
     intro()
     
@@ -52,7 +60,7 @@ def intro():
     """
     The opening scene of the game.
     """
-    print(art['intro'])
+    print(Fore.GREEN + art['intro'])
     delay_print(script['intro_one'])
     delay_print("This is our chance says Red let's go " + name +"!\n")
     delay_print(script['intro_two'])
@@ -64,17 +72,17 @@ def intro():
     else:
         if user_input == "forward":
             delay_print("You chose " + user_input + " to enter the Watchhouse\n")
-            delay_print("Loading Area........\n")
+            progress_bar()
             clear_screen()
             watch_house()
         elif user_input == "right":
             delay_print("You chose " + user_input + " to enter the Courtyard\n")
-            delay_print("Loading Area........\n")
+            progress_bar()
             clear_screen()
             courtyard()
         else:
             delay_print("You chose " + user_input + " to enter the Dungeon\n")
-            delay_print("Loading Area........\n")
+            progress_bar()
             clear_screen()
             dungeon()
     
@@ -84,7 +92,7 @@ def watch_house():
     """
     Loads the watchhouse area.
     """
-    print(art['watch_house'])                                            
+    print(Fore.GREEN + art['watch_house'])                                            
     delay_print(script['watch_house_one'])
     delay_print("There's not much in here " + name + " we should move on to the next room I already\nlooted the place.\n")
     delay_print(script['watch_house_two'])
@@ -96,12 +104,12 @@ def watch_house():
     else:
         if user_input == "left":
             delay_print("You chose " + user_input + " to enter the Courtyard\n")
-            delay_print("Loading Area........\n")
+            progress_bar()
             clear_screen()
             courtyard()
         else:
             delay_print("You chose " + user_input + " to enter the Dungeon\n")
-            delay_print("Loading Area........\n")
+            progress_bar()
             clear_screen()
             dungeon()
 
@@ -110,7 +118,7 @@ def dungeon():
     """
     Loads the Dungeon cells area
     """
-    print(art['dungeon'])
+    print(Fore.GREEN + art['dungeon'])
     delay_print(script['dungeon'])
     print("Go: left/ right")
     user_input = input()
@@ -120,12 +128,12 @@ def dungeon():
     else:
         if user_input == "left":
             delay_print("You chose " + user_input + " to enter the Warden's office\n")
-            delay_print("Loading Area........\n")
+            progress_bar()
             clear_screen()
             wardens_office()
         else:
             delay_print("You chose " + user_input + " to enter the Barracks\n")
-            delay_print("Loading Area........\n")
+            progress_bar()
             clear_screen()
 
 
@@ -139,18 +147,19 @@ def warden_game():
         key = True
         print("You got the key")
         delay_print("Now lets head to the courtyard")
-        delay_print("Loading Area........\n")
+        progress_bar()
         clear_screen()
         courtyard()
     else:
-        print("You died")
+        print("You searched the wrong place and woke the warden!")
+        game_over()
 
 
 def wardens_office():
     """
     Loads the wardens office area
     """
-    print(art['wardens_office'])
+    print(Fore.GREEN + art['wardens_office'])
     delay_print(script['warden_office_script'])
     print("What do you think " + name + " should we try pickpocket him?")
     print("Enter: yes / no")
@@ -172,11 +181,11 @@ def wardens_office():
             else:
                 if direction == "forward":
                     delay_print("You chose " + direction + " to enter the Barracks\n")
-                    delay_print("Loading Area........\n")
+                    progress_bar()
                     clear_screen()
                 else:
                     delay_print("You chose " + direction + "to enter the Courtyard")
-                    delay_print("Loading Area........\n")
+                    progress_bar()
                     clear_screen()
                     courtyard()
 
@@ -185,7 +194,7 @@ def courtyard():
     """
     Loads the courtyard function
     """
-    print(art['courtyard'])
+    print(Fore.GREEN + art['courtyard'])
     delay_print(script['courtyard'])
     print("Enter: north / south / east / west / back")
     user_input = input()
@@ -195,27 +204,27 @@ def courtyard():
     else:
         if user_input == "north":
             delay_print("You chose " + user_input + " to enter the Armoury\n")
-            delay_print("Loading Area........\n")
+            progress_bar()
             clear_screen()
             armoury()
         elif user_input == "south":
             delay_print("You chose " + user_input + " to enter the Tunnels\n")
-            delay_print("Loading Area........\n")
+            progress_bar()
             clear_screen()
             tunnels()
         elif user_input == "east":
             delay_print("You chose " + user_input + " to enter the Gates\n")
-            delay_print("Loading Area........\n")
+            progress_bar()
             clear_screen()
             gates()
         elif user_input == "back":
             delay_print("You chose " + user_input + " to enter the Dungeon\n")
-            delay_print("Loading Area........\n")
+            progress_bar()
             clear_screen()
             dungeon()
         elif user_input == "west":
             delay_print("You chose " + user_input + " to enter the Infirmary\n")
-            delay_print("Loading Area........\n")
+            progress_bar()
             clear_screen()
             infirmary()
 
@@ -225,7 +234,7 @@ def armoury():
     Loads the Armoury scene
     """
     global sword
-    print(art['armoury'])
+    print(Fore.GREEN + art['armoury'])
     delay_print(script['armoury'])
     print("Enter: yes / no")
     user_input = input()
@@ -236,26 +245,24 @@ def armoury():
         if user_input == "yes":
             sword = True
             delay_print(script['accept_sword'])
-            delay_print("Loading Area........\n")
+            progress_bar()
             clear_screen()
             courtyard()
         else:
             delay_print(script['deny_sword'])
-            delay_print("Loading Area........\n")
+            progress_bar()
             clear_screen()
             courtyard()
 
     
-    
-
 
 def tunnels():
     """
     Loads the tunnels scene
     """
-    print(art['tunnels'])
+    print(Fore.GREEN + art['tunnels'])
     delay_print(script['tunnels'])
-    delay_print("Loading Area........\n")
+    progress_bar()
     clear_screen()
     courtyard()
 
@@ -266,16 +273,16 @@ def gates():
     Loads the castle gates scene
     """
     global key
-    print(art['gates'])
+    print(Fore.GREEN + art['gates'])
     
     if key:
         delay_print(script['gates_key'])
         delay_print("We did it " + name + " we're finally free, let's take those horses and get back to Donegal!")
         clear_screen()
-        play_again()
+        escape_play_again()
     else:
         delay_print("Looks like it is locked we need to find a key, let's head back")
-        delay_print("Loading Area........\n")
+        progress_bar()
         clear_screen()
         courtyard()
 
@@ -285,11 +292,15 @@ def infirmary():
     """
     Loads the infirmary scene
     """
-    print(art['infirmary'])
+    print(Fore.GREEN + art['infirmary'])
+    delay_print(script['infirmary'])
 
 
-def play_again():
-    delay_print(art['escaped'])
+def escape_play_again():
+    """
+    Appears at games finish if the player escapes
+    """
+    delay_print(Fore.GREEN + art['escaped'])
     print("Congratulations " + name + " you win!")
     print("Would you like to play again?")
     print("Enter: yes / no")
@@ -300,12 +311,30 @@ def play_again():
     else:
         delay_print(art['goodbye'])
 
+
+def game_over():
+    """
+    Appears if they player is caught
+    """
+    delay_print(Fore.RED + art['dead'])
+    delay_print(script['game_over'])
+    print("Would you like to play again?")
+    print("Enter: yes / no")
+    user_input = input()
+    
+    if user_input == "yes":
+        start_game()
+    else:
+        delay_print(art['goodbye'])
+
+
+
 def main():
     """
     Main game function
     """
     start_game()
     
- 
+
 main()
 

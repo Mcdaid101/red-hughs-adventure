@@ -28,7 +28,11 @@ script = {
 
     "tunnels": """You enter the dark of the tunnels. This place smells like shit says Red I really\ndon't want to be down here. Hold on what's that noise! The sound of a thousand\n squeals echoes down the tunnel. Rats! hundreds of them. They quickly swarm\nover you and nip at your skin. Back to the courtyard shouts Red before they eat\nus alive.\n""",
 
-    "gates_key": """The castle gates loom above you, we definitely can't climb that anyway look at\nthose spikes! Wait look at the key hole! Try it with the key you got earlier.\n It works!\n"""
+    "gates_key": """The castle gates loom above you, we definitely can't climb that anyway look at\nthose spikes! Wait look at the key hole! Try it with the key you got earlier.\n It works!\n""",
+
+    "infirmary": """You enter the infirmary. Sick prisoners lie in their beds asleep, arms chained\nto a ball on the ground. There doesn't seem to be much in here says Red.\nAlthough there is health potions over there if you need them.\n""",
+
+    "game_over": """GAME OVER you have been killed by the guards, better luck next time!\n"""
 }
 
 
