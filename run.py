@@ -37,7 +37,7 @@ def delay_print(s):
     for c in s:
         sys.stdout.write(c)
         sys.stdout.flush()
-        time.sleep(0.0)
+        time.sleep(0.03)
 
 
 def display_scene(x = '', y = ''):
