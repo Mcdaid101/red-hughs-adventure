@@ -11,13 +11,14 @@ from rich.progress import track
 import random
 
 
-key = False
+key = False  
 sword = False
 
 
 def progress_bar():
     """
-    Adds a progress bar to simulate each function being loaded
+    Adds a progress bar to simulate each function room /area
+    being loaded
     """
     for i in track(range(3), description="Loading Area..."):
        time.sleep(0.33)
@@ -29,20 +30,24 @@ def clear_screen():
     """
     os.system('cls' if os.name=='nt' else 'clear')
 
+
 def delay_print(s):
     """
-    This function delays text output to a slower speed for style purposes. 
+    This function delays text output to a slower speed,
+    making it look like the text is being printed out one
+    letter at a time  
 
     """
     for c in s:
         sys.stdout.write(c)
         sys.stdout.flush()
-        time.sleep(0.03)
+        time.sleep(0.05)
 
 
 def display_scene(x = '', y = ''):
     """
-    This function displays the scenes image and script 
+    This function displays the scenes image and script at
+    the beginning of each scene / area 
     """
     print(Fore.GREEN + art[x])
     delay_print(Fore.GREEN + script[y])
@@ -50,7 +55,9 @@ def display_scene(x = '', y = ''):
 
 def start_game():
     """
-    gets the players name and begins the game. 
+    gets the players name and begins the game.
+    A while loop makes sure the player enters a name
+    before letting them continue.
     """
     global user
     clear_screen()
@@ -191,7 +198,9 @@ def dungeon():
 
 def warden_game():
     """
-    Mini game to pickpocket keys in the wardens office function
+    Mini game to pickpocket keys in the wardens office function.
+    The player must choose a number between 1 and 2 for the correct
+    answer which is randomly generated. 
     """
     global key
     keys = random.randint(1, 2)
@@ -213,7 +222,9 @@ def warden_game():
 
 def wardens_office():
     """
-    Loads the wardens office area
+    Loads the wardens office area.
+    The player can then choose whether to play the pickpocket game
+    or leave.
     """
     display_scene('wardens_office', 'warden_office_script')
     print("What do you think " + name + " should we try pickpocket him?")
@@ -244,9 +255,11 @@ def wardens_office():
                     clear_screen()
                     courtyard()
 
+
 def armoury():
     """
-    Loads the Armoury scene
+    Loads the Armoury scene.
+    The player can choose whether to pick up a sword
     """
     global sword
     display_scene('armoury', 'armoury')
@@ -272,7 +285,9 @@ def armoury():
 
 def barracks():
     """
-    Loads the barracks function
+    Loads the barracks function.
+    The way this scene is played out depends on if the player
+    has found/ or accepted to pick up the sword from the armoury.
     """
     global sword
     display_scene('barracks', 'barracks')
@@ -304,7 +319,9 @@ def tunnels():
 
 def gates():
     """
-    Loads the castle gates scene
+    Loads the castle gates scene.
+    The way this scene is played out depends on if the player
+    has acquired the key from the warden.
     """
     global key
 
@@ -332,7 +349,8 @@ def infirmary():
 
 def escape_play_again():
     """
-    Appears at games finish if the player escapes
+    Appears at games finish if the player escapes.
+    Lets them play again if they choose to.
     """
     delay_print(Fore.GREEN + art['escaped'])
     print("Congratulations " + name + " you win!")
@@ -348,7 +366,8 @@ def escape_play_again():
 
 def game_over():
     """
-    Appears if they player is caught
+    Appears if they player is caught or killed.
+    Lets them play again if they choose to.
     """
     print(Fore.RED + art['dead'])
     print(script['game_over'])
