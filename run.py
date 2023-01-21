@@ -249,6 +249,7 @@ def wardens_office():
                     delay_print(Fore.GREEN + "You chose " + direction + " to enter the Barracks\n")
                     progress_bar()
                     clear_screen()
+                    barracks()
                 else:
                     delay_print(Fore.GREEN + "You chose " + direction + "to enter the Courtyard")
                     progress_bar()
