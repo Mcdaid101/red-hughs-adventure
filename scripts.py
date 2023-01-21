@@ -28,7 +28,7 @@ script = {
 
     "tunnels": """You enter the dark of the tunnels. This place smells like shit says Red I really\ndon't want to be down here. Hold on what's that noise! The sound of a thousand\n squeals echoes down the tunnel. Rats! hundreds of them. They quickly swarm\nover you and nip at your skin. Back to the courtyard shouts Red before they eat\nus alive.\n""",
 
-    "barracks": """You sneak into the barracks knowing that the guard is asleep, there is a back\window you can jump through and land on a bale of hay below to escape.\nAs you tiptoe across the room the guard awakes, spots you and grabs his sword.\nYou ready yourself to fight! a weapon would be useful right now..\n""",
+    "barracks": """You sneak into the barracks knowing that the guard is asleep, there is a back\nwindow you can jump through and land on a bale of hay below to escape.\nAs you tiptoe across the room the guard awakes, spots you and grabs his sword.\nYou ready yourself to fight! a weapon would be useful right now..\n""",
 
     "barracks_win": """You and Red draw your swords from the armoury, two against one this should be\neasy.\n""",
 

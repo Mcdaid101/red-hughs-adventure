@@ -19,8 +19,8 @@ def progress_bar():
     """
     Adds a progress bar to simulate each function being loaded
     """
-    for i in track(range(4), description="Loading Area..."):
-       time.sleep(0.4)
+    for i in track(range(3), description="Loading Area..."):
+       time.sleep(0.33)
 
 
 def clear_screen():
@@ -37,7 +37,7 @@ def delay_print(s):
     for c in s:
         sys.stdout.write(c)
         sys.stdout.flush()
-        time.sleep(0.01)
+        time.sleep(0.05)
 
 
 def start_game():
@@ -89,6 +89,46 @@ def intro():
     
 
 
+def courtyard():
+    """
+    Loads the courtyard function
+    """
+    print(Fore.GREEN + art['courtyard'])
+    delay_print(script['courtyard'])
+    print("Enter: north / south / east / west / back")
+    user_input = input()
+
+    while not re.match("^[north, south, east, west, back]*$", user_input):
+        user_input = input("Please enter either: north, south, east, west or back\n")
+    else:
+        if user_input == "north":
+            delay_print("You chose " + user_input + " to enter the Armoury\n")
+            progress_bar()
+            clear_screen()
+            armoury()
+        elif user_input == "south":
+            delay_print("You chose " + user_input + " to enter the Tunnels\n")
+            progress_bar()
+            clear_screen()
+            tunnels()
+        elif user_input == "east":
+            delay_print("You chose " + user_input + " to enter the Gates\n")
+            progress_bar()
+            clear_screen()
+            gates()
+        elif user_input == "back":
+            delay_print("You chose " + user_input + " to enter the Dungeon\n")
+            progress_bar()
+            clear_screen()
+            dungeon()
+        elif user_input == "west":
+            delay_print("You chose " + user_input + " to enter the Infirmary\n")
+            progress_bar()
+            clear_screen()
+            infirmary()
+
+
+
 def watch_house():
     """
     Loads the watchhouse area.
@@ -136,6 +176,7 @@ def dungeon():
             delay_print("You chose " + user_input + " to enter the Barracks\n")
             progress_bar()
             clear_screen()
+            barracks()
 
 
 def warden_game():
@@ -223,61 +264,23 @@ def barracks():
     """
     Loads the barracks function
     """
+    global sword
     print(Fore.GREEN + art['barracks'])
     delay_print(script['barracks'])
-    global sword
     
     if sword:
         delay_print(script['barracks_win'])
+        delay_print("You and Red cut down the guard like a knife through butter")
         delay_print("We did it " + name + " we're finally free, jump out and get back to Donegal!\n")
         clear_screen()
         escape_play_again()
     else:
         delay_print("The guard slays you and Red as you were weaponless!\n")
         delay_print("Don't bring fists to a sword fight!")
+        clear_screen()
         game_over()
 
 
-
-def courtyard():
-    """
-    Loads the courtyard function
-    """
-    print(Fore.GREEN + art['courtyard'])
-    delay_print(script['courtyard'])
-    print("Enter: north / south / east / west / back")
-    user_input = input()
-
-    while not re.match("^[north, south, east, west, back]*$", user_input):
-        user_input = input("Please enter either: north, south, east, west or back\n")
-    else:
-        if user_input == "north":
-            delay_print("You chose " + user_input + " to enter the Armoury\n")
-            progress_bar()
-            clear_screen()
-            armoury()
-        elif user_input == "south":
-            delay_print("You chose " + user_input + " to enter the Tunnels\n")
-            progress_bar()
-            clear_screen()
-            tunnels()
-        elif user_input == "east":
-            delay_print("You chose " + user_input + " to enter the Gates\n")
-            progress_bar()
-            clear_screen()
-            gates()
-        elif user_input == "back":
-            delay_print("You chose " + user_input + " to enter the Dungeon\n")
-            progress_bar()
-            clear_screen()
-            dungeon()
-        elif user_input == "west":
-            delay_print("You chose " + user_input + " to enter the Infirmary\n")
-            progress_bar()
-            clear_screen()
-            infirmary()
-
-    
 
 def tunnels():
     """
@@ -334,7 +337,7 @@ def escape_play_again():
     if user_input == "yes":
         start_game()
     else:
-        delay_print(art['goodbye'])
+        print(art['goodbye'])
 
 
 def game_over():
