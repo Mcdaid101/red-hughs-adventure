@@ -41,7 +41,7 @@ def delay_print(s):
     for c in s:
         sys.stdout.write(c)
         sys.stdout.flush()
-        time.sleep(0.05)
+        time.sleep(0.04)
 
 
 def display_scene(x = '', y = ''):
@@ -295,13 +295,13 @@ def barracks():
     
     if sword:
         delay_print(script['barracks_win'])
-        delay_print("You and Red cut down the guard like a knife through butter")
+        delay_print("You and Red cut down the guard like a knife through butter\n")
         delay_print("We did it " + name + " we're finally free, jump out and get back to Donegal!\n")
         clear_screen()
         escape_play_again()
     else:
         delay_print("The guard slays you and Red as you were weaponless!\n")
-        delay_print("Don't bring fists to a sword fight!")
+        delay_print("Don't bring fists to a sword fight!\n")
         clear_screen()
         game_over()
 
