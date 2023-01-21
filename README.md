@@ -1,33 +1,23 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Red Hugh's Adventure
 
-Welcome Mcdaid101,
+Red Hugh's Adventure is a Python terminal adventure game which runs in the Code Institute's mock terminal on Heroku.
+
+Players must navigate their way through Dublin castle and escape through an exit while solving puzzles along the way. 
 
 You can find the live site [here(https://red-hughs-adventure.herokuapp.com/)]
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+![mock up](multi_device_mock_up.png)
+&nbsp;
 
-## Reminders
+## How to play
+* This game is constructed like a traditional text adventure game where the player is asked to input what direction he would like to head. 
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+* For example head north for kitchen, head south for bedroom and head east for bathroom.
 
-## Creating the Heroku app
+* Once the desired input is entered the player will arrive there and be allowed to return to previous locations with items picked up from other ones.
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+* Items acquired through visiting new locations and solving puzzles are vital to the player's progress and will allow he/she to escape and complete the game. 
 
-1. `heroku/python`
-2. `heroku/nodejs`
+* If a player is caught or killed by the guards he will fail the game and be offered another attempt. 
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
-
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
-
-Connect your GitHub repository and deploy as normal.
-
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
------
-Happy coding!
+## Features 

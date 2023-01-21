@@ -37,8 +37,16 @@ def delay_print(s):
     for c in s:
         sys.stdout.write(c)
         sys.stdout.flush()
-        time.sleep(0.05)
+        time.sleep(0.0)
 
+
+def display_scene(x = '', y = ''):
+    """
+    This function displays the scenes image and script 
+    """
+    print(Fore.GREEN + art[x])
+    delay_print(Fore.GREEN + script[y])
+    
 
 def start_game():
     """
@@ -46,8 +54,7 @@ def start_game():
     """
     clear_screen()
     delay_print(Fore.GREEN + "It's christmas night in Dublin castle, the year is 1591 AD")
-    print(art['start'])
-    delay_print(script['start'])
+    display_scene('start', 'start')
     user = input("What is your name prisoner?  ")
     global name
     name = user.capitalize()
@@ -61,8 +68,7 @@ def intro():
     """
     The opening scene of the game.
     """
-    print(Fore.GREEN + art['intro'])
-    delay_print(script['intro_one'])
+    display_scene('intro', 'intro_one')
     delay_print("This is our chance says Red let's go " + name +"!\n")
     delay_print(script['intro_two'])
     print("Go: forward / right / left")
@@ -93,8 +99,7 @@ def courtyard():
     """
     Loads the courtyard function
     """
-    print(Fore.GREEN + art['courtyard'])
-    delay_print(script['courtyard'])
+    display_scene('courtyard', 'courtyard')
     print("Enter: north / south / east / west / back")
     user_input = input()
 
@@ -133,8 +138,7 @@ def watch_house():
     """
     Loads the watchhouse area.
     """
-    print(Fore.GREEN + art['watch_house'])                                            
-    delay_print(script['watch_house_one'])
+    display_scene('watch_house', 'watch_house_one')
     delay_print("There's not much in here " + name + " we should move on to the next room I already\nlooted the place.\n")
     delay_print(script['watch_house_two'])
     print("Go: right / left")
@@ -159,8 +163,7 @@ def dungeon():
     """
     Loads the Dungeon cells area
     """
-    print(Fore.GREEN + art['dungeon'])
-    delay_print(script['dungeon'])
+    display_scene('dungeon', 'dungeon')
     print("Go: left/ right")
     user_input = input()
 
@@ -203,8 +206,7 @@ def wardens_office():
     """
     Loads the wardens office area
     """
-    print(Fore.GREEN + art['wardens_office'])
-    delay_print(script['warden_office_script'])
+    display_scene('wardens_office', 'warden_office_script')
     print("What do you think " + name + " should we try pickpocket him?")
     print("Enter: yes / no")
     pickpocket = input()
@@ -238,8 +240,7 @@ def armoury():
     Loads the Armoury scene
     """
     global sword
-    print(Fore.GREEN + art['armoury'])
-    delay_print(script['armoury'])
+    display_scene('armoury', 'armoury')
     print("Enter: yes / no")
     user_input = input()
 
@@ -265,8 +266,7 @@ def barracks():
     Loads the barracks function
     """
     global sword
-    print(Fore.GREEN + art['barracks'])
-    delay_print(script['barracks'])
+    display_scene('barracks', 'barracks')
     
     if sword:
         delay_print(script['barracks_win'])
@@ -286,8 +286,7 @@ def tunnels():
     """
     Loads the tunnels scene
     """
-    print(Fore.GREEN + art['tunnels'])
-    delay_print(script['tunnels'])
+    display_scene('tunnels', 'tunnels')
     progress_bar()
     clear_screen()
     courtyard()
@@ -318,8 +317,7 @@ def infirmary():
     """
     Loads the infirmary scene
     """
-    print(Fore.GREEN + art['infirmary'])
-    delay_print(script['infirmary'])
+    display_scene('infirmary', 'infirmary')
     clear_screen()
     courtyard()
 
@@ -355,7 +353,7 @@ def game_over():
         start_game()
     else:
         clear_screen()
-        delay_print(art['goodbye'])
+        print(art['goodbye'])
 
 
 
