@@ -34,6 +34,8 @@ script = {
 
     "gates_key": """The castle gates loom above you, we definitely can't climb that anyway look at\nthose spikes! Wait look at the key hole! Try it with the key you got earlier.\n It works!\n""",
 
+    "gates_nokey": """Looks like it is locked we need to find a key, let's head back..........\n""",
+
     "infirmary": """You enter the infirmary. Sick prisoners lie in their beds asleep, arms chained\nto a ball on the ground. There doesn't seem to be much in here says Red.\nLet's head back out to the courtyard\n""",
 
     "game_over": """GAME OVER you have been killed by the guards, better luck next time!\n"""

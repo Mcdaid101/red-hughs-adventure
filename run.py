@@ -52,17 +52,24 @@ def start_game():
     """
     gets the players name and begins the game. 
     """
+    global user
     clear_screen()
     delay_print(Fore.GREEN + "It's christmas night in Dublin castle, the year is 1591 AD")
     display_scene('start', 'start')
-    user = input("What is your name prisoner?  ")
+    while True:
+        user = input("What is your name prisoner:  ")
+        if not user:
+            print(Fore.RED + "You must enter a name to continue")
+            continue
+        else:
+            break
     global name
     name = user.capitalize()
-    delay_print("Welcome " + name + " and best of luck on your quest!\n")
+    delay_print(Fore.GREEN + "Welcome " + name + " and best of luck on your quest!\n")
     progress_bar()
     clear_screen()
     intro()
-    
+
 
 def intro():
     """
@@ -75,20 +82,20 @@ def intro():
     user_input = input()
 
     while not re.match("^[forward, right, left]*$", user_input):
-        user_input = input("Please enter either: forward, right or left: \n")
+        user_input = input(Fore.RED + "Please enter either: forward, right or left: \n")
     else:
         if user_input == "forward":
-            delay_print("You chose " + user_input + " to enter the Watchhouse\n")
+            delay_print(Fore.GREEN + "You chose " + user_input + " to enter the Watchhouse\n")
             progress_bar()
             clear_screen()
             watch_house()
         elif user_input == "right":
-            delay_print("You chose " + user_input + " to enter the Courtyard\n")
+            delay_print(Fore.GREEN + "You chose " + user_input + " to enter the Courtyard\n")
             progress_bar()
             clear_screen()
             courtyard()
         else:
-            delay_print("You chose " + user_input + " to enter the Dungeon\n")
+            delay_print(Fore.GREEN + "You chose " + user_input + " to enter the Dungeon\n")
             progress_bar()
             clear_screen()
             dungeon()
@@ -104,30 +111,30 @@ def courtyard():
     user_input = input()
 
     while not re.match("^[north, south, east, west, back]*$", user_input):
-        user_input = input("Please enter either: north, south, east, west or back\n")
+        user_input = input(Fore.RED + "Please enter either: north, south, east, west or back\n")
     else:
         if user_input == "north":
-            delay_print("You chose " + user_input + " to enter the Armoury\n")
+            delay_print(Fore.GREEN + "You chose " + user_input + " to enter the Armoury\n")
             progress_bar()
             clear_screen()
             armoury()
         elif user_input == "south":
-            delay_print("You chose " + user_input + " to enter the Tunnels\n")
+            delay_print(Fore.GREEN + "You chose " + user_input + " to enter the Tunnels\n")
             progress_bar()
             clear_screen()
             tunnels()
         elif user_input == "east":
-            delay_print("You chose " + user_input + " to enter the Gates\n")
+            delay_print(Fore.GREEN + "You chose " + user_input + " to enter the Gates\n")
             progress_bar()
             clear_screen()
             gates()
         elif user_input == "back":
-            delay_print("You chose " + user_input + " to enter the Dungeon\n")
+            delay_print(Fore.GREEN + "You chose " + user_input + " to enter the Dungeon\n")
             progress_bar()
             clear_screen()
             dungeon()
         elif user_input == "west":
-            delay_print("You chose " + user_input + " to enter the Infirmary\n")
+            delay_print(Fore.GREEN + "You chose " + user_input + " to enter the Infirmary\n")
             progress_bar()
             clear_screen()
             infirmary()
@@ -145,15 +152,15 @@ def watch_house():
     user_input = input()
 
     while not re.match("^[forward, right, left]*$", user_input):
-        user_input = input("Please enter either: right or left: \n")
+        user_input = input(Fore.RED + "Please enter either: right or left: \n")
     else:
         if user_input == "left":
-            delay_print("You chose " + user_input + " to enter the Courtyard\n")
+            delay_print(Fore.GREEN + "You chose " + user_input + " to enter the Courtyard\n")
             progress_bar()
             clear_screen()
             courtyard()
         else:
-            delay_print("You chose " + user_input + " to enter the Dungeon\n")
+            delay_print(Fore.GREEN + "You chose " + user_input + " to enter the Dungeon\n")
             progress_bar()
             clear_screen()
             dungeon()
@@ -168,15 +175,15 @@ def dungeon():
     user_input = input()
 
     while not re.match("^[left, right]*$", user_input):
-        user_input = input("Please enter either: left or right\n")
+        user_input = input(Fore.RED + "Please enter either: left or right\n")
     else:
         if user_input == "left":
-            delay_print("You chose " + user_input + " to enter the Warden's office\n")
+            delay_print(Fore.GREEN + "You chose " + user_input + " to enter the Warden's office\n")
             progress_bar()
             clear_screen()
             wardens_office()
         else:
-            delay_print("You chose " + user_input + " to enter the Barracks\n")
+            delay_print(Fore.GREEN + "You chose " + user_input + " to enter the Barracks\n")
             progress_bar()
             clear_screen()
             barracks()
@@ -186,19 +193,21 @@ def warden_game():
     """
     Mini game to pickpocket keys in the wardens office function
     """
+    global key
     keys = random.randint(1, 2)
     pick = int(input("Enter 1 for coat, 2 for trousers  "))
+    
     if pick == keys:
-            key = True
-            print("You got the key")
-            delay_print("Now lets head to the courtyard")
-            progress_bar()
-            clear_screen()
-            courtyard()
+        key = True
+        delay_print("You got the key! Now lets head to the courtyard\n")
+        progress_bar()
+        clear_screen()
+        courtyard()
     else:
-           clear_screen()
-           print(Fore.RED + "You searched the wrong place and woke the warden!")
-           game_over()
+        clear_screen()
+        print(Fore.RED + "You searched the wrong place and woke the warden!")
+        game_over()
+           
         
 
 
@@ -212,10 +221,10 @@ def wardens_office():
     pickpocket = input()
 
     while not re.match("^[yes, no]*$", pickpocket):
-        pickpocket = input("Please enter either: yes or no\n")
+        pickpocket = input(Fore.RED + "Please enter either: yes or no\n")
     else:
         if pickpocket == "yes":
-            delay_print("Go on " + name + " you can do it!\n")
+            delay_print(Fore.GREEN + "Go on " + name + " you can do it!\n")
             delay_print(script['accept_pick_pocket'])
             warden_game()
         else:
@@ -223,14 +232,14 @@ def wardens_office():
             print("Enter: forward / right")
             direction = input()
             while not re.match("^[forward, right]*$", direction):
-                direction = input("Please enter either: forward or right\n")
+                direction = input(Fore.RED + "Please enter either: forward or right\n")
             else:
                 if direction == "forward":
-                    delay_print("You chose " + direction + " to enter the Barracks\n")
+                    delay_print(Fore.GREEN + "You chose " + direction + " to enter the Barracks\n")
                     progress_bar()
                     clear_screen()
                 else:
-                    delay_print("You chose " + direction + "to enter the Courtyard")
+                    delay_print(Fore.GREEN + "You chose " + direction + "to enter the Courtyard")
                     progress_bar()
                     clear_screen()
                     courtyard()
@@ -245,16 +254,16 @@ def armoury():
     user_input = input()
 
     while not re.match("^[yes, no]*$", user_input):
-        user_input = input("Please enter either: yes / no\n")
+        user_input = input(Fore.RED + "Please enter either: yes / no\n")
     else:
         if user_input == "yes":
             sword = True
-            delay_print(script['accept_sword'])
+            delay_print(Fore.GREEN + script['accept_sword'])
             progress_bar()
             clear_screen()
             courtyard()
         else:
-            delay_print(script['deny_sword'])
+            delay_print(Fore.GREEN + script['deny_sword'])
             progress_bar()
             clear_screen()
             courtyard()
@@ -298,15 +307,14 @@ def gates():
     Loads the castle gates scene
     """
     global key
-    print(Fore.GREEN + art['gates'])
-    
+
     if key:
-        delay_print(script['gates_key'])
+        display_scene('gates', 'gates_key')
         delay_print("We did it " + name + " we're finally free, let's take those horses and get back to Donegal!")
         clear_screen()
         escape_play_again()
     else:
-        delay_print("Looks like it is locked we need to find a key, let's head back")
+        display_scene('gates', 'gates_nokey')
         progress_bar()
         clear_screen()
         courtyard()
