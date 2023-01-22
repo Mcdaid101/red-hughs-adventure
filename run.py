@@ -41,7 +41,7 @@ def delay_print(s):
     for c in s:
         sys.stdout.write(c)
         sys.stdout.flush()
-        time.sleep(0.03)
+        time.sleep(0.07)
 
 
 def display_scene(x="", y=""):
@@ -88,7 +88,7 @@ def intro():
     display_scene("intro", "intro_one")
     delay_print("This is our chance says Red let's go " + name + "!\n")
     delay_print(script["intro_two"])
-    print("Go: forward / right / left")
+    print("Enter: forward / right / left")
     user_input = input()
 
     while not re.match("^[forward, right, left]*$", user_input):
@@ -178,7 +178,7 @@ def watch_house():
         + " we should move on to the next room I already\nlooted the place.\n"
     )
     delay_print(script["watch_house_two"])
-    print("Go: right / left")
+    print("Enter: right / left")
     user_input = input()
 
     while not re.match("^[forward, right, left]*$", user_input):
