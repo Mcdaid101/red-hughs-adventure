@@ -14,6 +14,10 @@ You can find the live site [Here](https://red-hughs-adventure.herokuapp.com/).
 I built this website as my third project for the code institutes full stack development and e-commerce applications course. 
 I built this website from scratch using the knowledge I gained from the course where I studied the basics of Python.
 
+# Target audience
+* Gamers
+* Terminal text based adventure game lovers 
+
 ## How to play
 * This game is constructed like a traditional text adventure game where the player is asked to input what direction they would like to head. 
 
@@ -110,6 +114,18 @@ I built this website from scratch using the knowledge I gained from the course w
 
 ![Flow Chart](assets/images/flow_chart%20.png)
 
+<br>
+
+* I designed this game to make it look like an old 80's style terminal game.
+* To do this I created the delay_print() function which printed out the game's script in a typewriter esque way.
+* Using the colorama library I gave the text a green colour with Fore.GREEN, to further it's traditional terminal game feel.
+* I used Fore.RED to give any validation fails and the game ending screens the colour red. 
+* Textualize Rich created the progress bar to simulate the new areas rendering.
+* The ASCII art comes from an online Generator and from an ASCII art archive which was very useful and saved me typing out any ASCII images. 
+* Regex helped me with input validation to ensure that the players inputs matched the games input directions
+
+<br>
+
 ## Issues with design
 
 * Orginally each areas script and ASCII art was loaded with a simple print function but this proved to be too messy and left the code readability very poor along with making it very hard to maintain. I then created two dictionaries to pull the scripts and images from. 
@@ -119,6 +135,25 @@ I built this website from scratch using the knowledge I gained from the course w
 <br>
 
 * To save me printing out the script and image to be loaded in each scene I created the display_scene() function in which I could pass the dictionary key's in as parameters, making my code even more readable and easier to maintain. 
+
+# Technology Used 
+<br>
+
+## Languages 
+* Python
+<br>
+
+## Tools and Frameworks
+* Git 
+* Github 
+* Vs Code IDE in browser
+* Textualize rich
+* Techsini Multi Device Mockup Generator used in this readme to display an image of the website on different devices 
+* Colorama 
+* Heroku
+* Imported RegEx for validation
+* Imported Time, sleep for functions
+* Imported OS to run clear screen
 
 # Bugs 
 
@@ -268,7 +303,7 @@ Testing done to ensure that the progress bar loads.
 
 * As a returning user: I want to be able to refuse or accept different tasks / objects <br>
 Testing done to ensure that the player can refuse or accept different tasks / objects.
-<details><summary>Frequent user 2</summary>
+<details><summary>Returning user 2</summary>
 <p>
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
@@ -317,3 +352,55 @@ Testing done to ensure the warden mini game produces a different answer with eac
 </p>
 </details>
 <br>
+
+# Testing and validation
+
+I have manually tested this project by doing the following:
+
+* Passed the project through a pep8 linter and confirmed there is no problems.
+* Tested in my gitpod terminal and the Heroku terminal.
+* Tested each user story to make sure each one passes. 
+
+Pep8
+* No errors were returned from Pep8online.com or from extendsclass.com/pythontester. 
+
+
+# Deployment 
+
+## Creating this project
+This project was created by navigating to the Code Institute's python student template and clicking the 'use this template' button. I then inputted the repository name "red-hughs-adventure" and included all branches. With the repository now created, I used the browser version of Vs Code to create the project. 
+<br>
+
+I used the following commands throughout this project:
+* Git add . - This added my file to the staging area to be committed
+* Git commit -m - This command committed any changes to the local repository along with a message
+* Git push - pushed my changes to the github repository and to Heroku 
+* git reset --hard HEAD^ - This removed my last commit 
+* python3 run.py - This ran my code in the terminal
+
+## Heroku
+ This game is deployed on the Code Institute's mock terminal on Heroku
+
+### Steps for deployment 
+* Fork or clone this repository
+* Created a new heroku app through build app
+* Set the buildpacks to Python and NodeJs in that specific order
+* Linked the heroku app to the repository via github
+* Clicked automatic deploys so each git push would automatically go to the heroku app
+* This was ideal for testing so I could see what the game looked like on the Heroku terminal with each git push
+
+# Credits 
+
+## Code 
+* The code for the delay_print() function was inspired from a post on stack overflow [here](https://stackoverflow.com/questions/9246076/how-to-print-one-character-at-a-time-on-one-line")
+* The code for the progress bar is taken from textualize rich, a python terminal style package [here](https://rich.readthedocs.io/en/stable/introduction.html)
+* The colour functions are imported form a python terminal style package called colorama you can find it [here](https://pypi.org/project/colorama/)
+
+## Media 
+* Some of the ASCII art was generated [Here](https://patorjk.com/software/taag/#p=testall&h=2&v=2&f=Relief2&t=Courtyard)
+* Some of the ASCII art is taken from an ASCII art archive [Here]("https://www.asciiart.eu/")
+
+## Acknowledgements 
+* I would like to thank my mentor Ronan Mc Clelland for his help and guidance while I built this project.
+* I would like to thank my family for their love and support.
+* And finally my girlfriend for her advice on my game's style. 
