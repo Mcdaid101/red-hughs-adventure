@@ -41,7 +41,7 @@ def delay_print(s):
     for c in s:
         sys.stdout.write(c)
         sys.stdout.flush()
-        time.sleep(0.04)
+        time.sleep(0.03)
 
 
 def display_scene(x = '', y = ''):
@@ -217,7 +217,8 @@ def warden_game():
         print(Fore.RED + "You searched the wrong place and woke the warden!")
         game_over()
            
-        
+
+
 
 
 def wardens_office():
