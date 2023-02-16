@@ -212,19 +212,12 @@ def dungeon():
         user_input = input(Fore.RED + "Please enter either: left or right\n")
     else:
         if user_input == "left":
-            delay_print(
-                Fore.GREEN
-                + "You chose "
-                + user_input
-                + " to enter the Warden's office\n"
-            )
+            delay_print(Fore.GREEN + "You chose "+ user_input + " to enter the Warden's office\n")
             progress_bar()
             clear_screen()
             wardens_office()
         else:
-            delay_print(
-                Fore.GREEN + "You chose " + user_input + " to enter the Barracks\n"
-            )
+            delay_print(Fore.GREEN + "You chose " + user_input + " to enter the Barracks\n")
             progress_bar()
             clear_screen()
             barracks()
